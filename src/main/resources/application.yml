@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: mybatis-demo
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mybatis?characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 1
+      connection-timeout: 5000
+swagger:
+  base-package: com.gjing.controller
+  description: SpringBoot使用Mybatis
+mybatis:
+  type-aliases-package: com.gjing.domain
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
